@@ -1,0 +1,107 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>
+      Customer Portal
+    </span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click) ="logout()">
+      <mat-icon aria-label="logout">logout</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<br/>
+
+<div class="container mat-elevation-z8">
+
+  <div class="form">
+    <mat-form-field floatPlaceholder="never" color="accent">
+      <input matInput #filter placeholder="Filter customers">
+    </mat-form-field>
+  </div>
+
+<mat-table [dataSource]="dataSource" matSort class="mat-cell">
+
+  <ng-container matColumnDef="customer_id">
+    <mat-header-cell *matHeaderCellDef> customer_id </mat-header-cell>
+    <mat-cell *matCellDef="let customer"> {{customer.customer_id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="customer code">
+    <mat-header-cell *matHeaderCellDef> customer code </mat-header-cell>
+    <mat-cell *matCellDef="let customer">{{customer.customer_code}}  </mat-cell>
+  </ng-container>
+
+
+  <ng-container matColumnDef="customer name">
+    <mat-header-cell *matHeaderCellDef> customer name </mat-header-cell>
+    <mat-cell *matCellDef="let customer">{{customer.customer_name}}  </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="customer address1">
+    <mat-header-cell *matHeaderCellDef> customer address1 </mat-header-cell>
+    <mat-cell *matCellDef="let customer">{{customer.customer_address1}}  </mat-cell>
+  </ng-container>
+
+
+  <ng-container matColumnDef="customer address2">
+    <mat-header-cell *matHeaderCellDef> customer address2 </mat-header-cell>
+    <mat-cell *matCellDef="let customer">{{customer.customer_address2}}  </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="customer pincode">
+    <mat-header-cell *matHeaderCellDef> customer pincode </mat-header-cell>
+    <mat-cell *matCellDef="let customer">{{customer.customer_pincode}}  </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> email </mat-header-cell>
+    <mat-cell *matCellDef="let customer"> {{customer.email}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="contact number">
+    <mat-header-cell *matHeaderCellDef> contact number </mat-header-cell>
+    <mat-cell *matCellDef="let customer">{{customer.contact_number}}  </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="contact person">
+    <mat-header-cell *matHeaderCellDef> contact person </mat-header-cell>
+    <mat-cell *matCellDef="let customer">{{customer.primary_contact_person}}  </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="record status">
+    <mat-header-cell *matHeaderCellDef> record status </mat-header-cell>
+    <mat-cell *matCellDef="let customer">{{customer.record_status}}  </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="enabled">
+    <mat-header-cell *matHeaderCellDef> enabled </mat-header-cell>
+    <mat-cell *matCellDef="let customer">{{customer.is_enabled}}  </mat-cell>
+  </ng-container>
+
+
+   <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="tablecols"></mat-header-row>
+  <mat-row *matRowDef="let row; columns:tablecols"></mat-row>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-icon-button color="accent" (click)="createCustomer()">
+        <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+      </button>
+    </mat-header-cell>
+
+       <mat-cell *matCellDef="let row;">
+        <button mat-icon-button color="accent" (click)="editCustomerDetails( row.customer_id,row.customer_code, row.customer_name,row.customer_address1,row.customer_address2,row.customer_pincode,row.email,row.contact_number,row.primary_contact_person)">
+          <mat-icon aria-label="Edit">edit</mat-icon>
+      </button>
+      <button mat-icon-button color="accent" (click)="deleteCustomerDetail(row.customer_id)">
+        <mat-icon aria-label="Delete">delete</mat-icon>
+      </button>
+      </mat-cell>
+
+  </ng-container>
+
+</mat-table>
+</div>
+
+

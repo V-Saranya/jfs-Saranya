@@ -1,0 +1,26 @@
+.mat-table{
+
+  width: 100%;
+  overflow: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+
+.mat-header-cell{
+  background-color: darkslateblue;
+  color: #dc3545;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.mat-cell{
+  word-break: break-word;
+}

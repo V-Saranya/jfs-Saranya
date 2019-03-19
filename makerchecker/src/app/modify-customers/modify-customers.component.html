@@ -1,0 +1,57 @@
+<div class="container">
+  <h3 mat-dialog-title>Edit Customer</h3>
+    <form [formGroup]="modifyForm" (ngSubmit)="onSubmit()" class="mat-dialog-content">
+
+      <div class="form">
+        <label for="customerId">Customer Id</label>
+        <input type="text" formControlName="customer_id" placeholder="customer id" name="customerid" class="form-control" id="customerid">
+      </div>
+
+      <div class="form">
+        <label for="customerId">Customer Code</label>
+        <input type="text" formControlName="customer_code" placeholder="customer code" name="customercode" class="form-control" id="customercode">
+      </div>
+
+
+      <div class="form">
+        <label for="customername">Customer name</label>
+        <input type="text" formControlName="customer_name" placeholder="customer name" name="customername" class="form-control" id="customername">
+      </div>
+
+      <div class="form">
+          <label for="customeraddress1">Customer Address1</label>
+          <input type="text" formControlName="customer_address1" placeholder="address1" name="addr" class="form-control" id="addr">
+        </div>
+
+
+      <div class="form">
+          <label for="customer address2">Customer address2</label>
+          <input formControlName="customer_address2" placeholder="address2" name="address2" class="form-control" id="address2">
+        </div>
+
+      <div class="form">
+          <label for="customer pincode">Customer pincode</label>
+          <input formControlName="customer_pincode" placeholder="pincode" name="pincode" class="form-control" id="pincode">
+        </div>
+
+
+      <div class="form">
+          <label for="email">Email </label>
+          <input formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+        </div>
+
+
+      <div class="form">
+          <label for="contact person">Primary contact person</label>
+          <input formControlName="primary_contact_person" placeholder="contactperson" name="contactperson" class="form-control" id="contactperson">
+        </div>
+
+        <div class="form">
+            <label for="contact number">Contact number</label>
+            <input formControlName="contact_number" placeholder="contactnumber" name="contactnumber" class="form-control" id="contactnumber">
+          </div>
+
+      <button type="submit" class="btn btn-success">Update</button>
+
+    </form>
+  </div>

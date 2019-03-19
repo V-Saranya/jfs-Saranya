@@ -1,0 +1,26 @@
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+.mat-card{
+  width: 30%;
+  height:250px;
+  margin: 170px;
+
+}
+mat-card-title{
+  display: flex;
+  justify-content: center;
+}
+
+mat-card-content{
+  display: flex;
+  justify-content: center;
+}
+ mat-card-actions
+ {
+  display: flex;
+  justify-content: center;
+
+}
